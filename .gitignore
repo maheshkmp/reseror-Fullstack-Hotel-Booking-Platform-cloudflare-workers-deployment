@@ -1,0 +1,60 @@
+# dependencies
+node_modules
+.bun
+**/node_modules
+
+# Next.js & build outputs
+.next
+out
+dist
+**/dist
+.vercel
+
+# Environment variables & secrets
+.env
+.env*.local
+.env.local
+.env.production
+.envvercel
+apps/api/.env
+packages/core/.env
+apps/web/.env
+
+# Temporary and test scripts
+tmp/
+scratch/
+check-user.ts
+debug-db.ts
+test-auth.ts
+test-create-org.ts
+test-db.ts
+test-zod.ts
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+bun.lockb
+
+# Code coverage & caches
+coverage/
+*.lcov
+.eslintcache
+.cache
+*.tsbuildinfo
+.turbo
+
+# Generated files
+apps/api/src/generated-openapi-spec.ts
+
+# IDEs & System files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
