@@ -3,6 +3,8 @@ import type { Session } from "core/auth/config";
 import { NextResponse, type NextRequest } from "next/server";
 import { getUserType } from "./lib/helpers/get-user-type";
 
+export const runtime = "edge";
+
 const authRoutes = [
   "/signin",
   "/signup",
