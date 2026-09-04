@@ -23,8 +23,8 @@
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "^1.13.7",
-    "@types/bun": "latest",
-    "core": "workspace:*",
+    "@types/bun": "^1.2.0",
+    "core": "*",
     "wrangler": "^3.109.2"
   },
   "peerDependencies": {
