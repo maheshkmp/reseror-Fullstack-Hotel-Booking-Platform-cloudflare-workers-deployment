@@ -22,10 +22,12 @@
     "db:studio": "bun run --filter core db:studio"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "^1.13.7",
     "@types/bun": "^1.2.0",
     "core": "*",
     "wrangler": "^3.109.2"
+  },
+  "overrides": {
+    "esbuild": "0.24.2"
   },
   "peerDependencies": {
     "typescript": "^5"
