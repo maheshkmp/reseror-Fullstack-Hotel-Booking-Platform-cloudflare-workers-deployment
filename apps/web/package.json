@@ -67,7 +67,7 @@
     "@tiptap/starter-kit": "^3.22.0",
     "@types/react-datepicker": "^7.0.0",
     "@vis.gl/react-google-maps": "^1.8.2",
-    "better-auth": "catalog:",
+    "better-auth": "^1.4.18",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",

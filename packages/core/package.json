@@ -71,10 +71,10 @@
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.2",
-    "better-auth": "catalog:",
+    "better-auth": "^1.4.18",
     "drizzle-orm": "^0.45.0",
     "drizzle-zod": "^0.8.3",
-    "hono": "catalog:",
+    "hono": "^4.10.7",
     "nodemailer": "^8.0.4",
     "postgres": "^3.4.8",
     "ws": "^8.18.3",
