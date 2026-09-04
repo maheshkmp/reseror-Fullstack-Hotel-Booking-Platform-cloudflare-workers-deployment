@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Upload } from "@aws-sdk/lib-storage";
-import sharp from "sharp";
 import { r2ServerClient, r2ServerConfig } from "@/modules/media/server-config";
 import { generateUniqueFileName, getMediaType } from "@/modules/media/utils";
+
+export const runtime = "edge";
 
 export async function POST(req: NextRequest) {
   try {
@@ -20,31 +21,8 @@ export async function POST(req: NextRequest) {
     const filename = generateUniqueFileName(file.name);
     const key = path ? `${path}/${filename}` : filename;
 
-    let body: Buffer | ReadableStream = file.stream();
-    let finalContentType = fileType;
-
-    // Optimization for images
-    if (fileType.startsWith("image/") && !fileType.includes("svg")) {
-      console.log("Optimizing image...");
-      try {
-        const buffer = Buffer.from(await file.arrayBuffer());
-        
-        // Convert to WebP and resize if too large
-        const optimizedBuffer = await sharp(buffer)
-          .resize(2000, 2000, { fit: 'inside', withoutEnlargement: true })
-          .webp({ quality: 80 })
-          .toBuffer();
-
-        body = optimizedBuffer;
-        finalContentType = "image/webp";
-        console.log("Image optimized successfully");
-      } catch (sharpError) {
-        console.error("Sharp optimization failed, falling back to original file:", sharpError);
-        // Fallback to original stream
-        body = file.stream();
-        finalContentType = fileType;
-      }
-    }
+    const body: ReadableStream = file.stream();
+    const finalContentType = fileType;
 
     console.log("Starting R2 upload...", { key, bucket: r2ServerConfig.bucket, endpoint: r2ServerConfig.endpoint });
 

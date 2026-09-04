@@ -6,6 +6,8 @@ import { Toaster } from "sonner";
 import { fontHeading, fontSans, fontSerif } from "../lib/fonts";
 import { NuqsAdapter } from 'nuqs/adapters/next/app';
 
+export const runtime = "edge";
+
 export const metadata: Metadata = {
   title: "Reseror.com",
   description:
