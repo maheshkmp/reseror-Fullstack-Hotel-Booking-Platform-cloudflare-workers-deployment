@@ -108,6 +108,7 @@
   "devDependencies": {
     "@cloudflare/next-on-pages": "^1.13.7",
     "@eslint/eslintrc": "^3",
+    "@opennextjs/cloudflare": "^1.20.6",
     "@tailwindcss/postcss": "^4",
     "@types/google.maps": "^3.58.1",
     "@types/node": "^20",

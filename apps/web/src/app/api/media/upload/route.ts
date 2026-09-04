@@ -3,7 +3,6 @@ import { Upload } from "@aws-sdk/lib-storage";
 import { r2ServerClient, r2ServerConfig } from "@/modules/media/server-config";
 import { generateUniqueFileName, getMediaType } from "@/modules/media/utils";
 
-export const runtime = "edge";
 
 export async function POST(req: NextRequest) {
   try {
