@@ -1,0 +1,9 @@
+PORT = "4000"
+
+DATABASE_URL = "postgresql://neondb_owner:npg_lDf7Vjq4azIv@ep-silent-art-ai54uwk0-pooler.c-4.us-east-1.aws.neon.tech/neondb?sslmode=require"
+BETTER_AUTH_SECRET="32Lcj950SEqg8hWA5VCK1dkDqg4z3K7y"
+BETTER_AUTH_URL ="http://localhost:4000"
+
+
+CLIENT_URL = "http://localhost:3000"
+API_URL = "http://localhost:4000"

@@ -1,0 +1,45 @@
+import { z } from "zod";
+export declare const destinations: z.ZodObject<{
+    id: z.ZodString;
+    organizationId: z.ZodString;
+    userId: z.ZodString;
+    title: z.ZodString;
+    slug: z.ZodOptional<z.ZodString>;
+    content: z.ZodOptional<z.ZodString>;
+    featuredImage: z.ZodOptional<z.ZodString>;
+    latitude: z.ZodOptional<z.ZodNumber>;
+    longitude: z.ZodOptional<z.ZodNumber>;
+    category: z.ZodOptional<z.ZodString>;
+    externalLink: z.ZodOptional<z.ZodString>;
+    popularityScore: z.ZodOptional<z.ZodNumber>;
+    recommended: z.ZodOptional<z.ZodBoolean>;
+    createdAt: z.ZodCoercedString<unknown>;
+    updatedAt: z.ZodNullable<z.ZodCoercedString<unknown>>;
+}, z.core.$strip>;
+export declare const destinationInsertSchema: z.ZodObject<{
+    slug: z.ZodOptional<z.ZodString>;
+    latitude: z.ZodOptional<z.ZodNumber>;
+    longitude: z.ZodOptional<z.ZodNumber>;
+    title: z.ZodString;
+    content: z.ZodOptional<z.ZodString>;
+    featuredImage: z.ZodOptional<z.ZodString>;
+    category: z.ZodOptional<z.ZodString>;
+    externalLink: z.ZodOptional<z.ZodString>;
+    popularityScore: z.ZodOptional<z.ZodNumber>;
+    recommended: z.ZodOptional<z.ZodBoolean>;
+}, z.core.$strip>;
+export declare const destinationUpdateSchema: z.ZodObject<{
+    slug: z.ZodOptional<z.ZodOptional<z.ZodString>>;
+    latitude: z.ZodOptional<z.ZodOptional<z.ZodNumber>>;
+    longitude: z.ZodOptional<z.ZodOptional<z.ZodNumber>>;
+    title: z.ZodOptional<z.ZodString>;
+    content: z.ZodOptional<z.ZodOptional<z.ZodString>>;
+    featuredImage: z.ZodOptional<z.ZodOptional<z.ZodString>>;
+    category: z.ZodOptional<z.ZodOptional<z.ZodString>>;
+    externalLink: z.ZodOptional<z.ZodOptional<z.ZodString>>;
+    popularityScore: z.ZodOptional<z.ZodOptional<z.ZodNumber>>;
+    recommended: z.ZodOptional<z.ZodOptional<z.ZodBoolean>>;
+}, z.core.$strip>;
+export type destinationUpdateType = z.infer<typeof destinationUpdateSchema>;
+export type destination = z.infer<typeof destinations>;
+export type destinationInsertType = z.infer<typeof destinationInsertSchema>;

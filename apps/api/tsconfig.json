@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["ESNext"],
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "verbatimModuleSyntax": false,
+    "noEmit": false,
+    "rootDir": ".",
+    "outDir": "./dist",
+
+    "strict": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "hono/jsx",
+
+    "paths": {
+      "@/*": ["./src/*"],
+      "core/*": ["../../packages/core/src/*"]
+    }
+  }
+}

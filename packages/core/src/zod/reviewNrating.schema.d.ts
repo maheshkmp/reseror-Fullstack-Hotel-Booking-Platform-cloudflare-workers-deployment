@@ -1,0 +1,48 @@
+import { z } from "zod";
+export declare const reviewNrating: z.ZodObject<{
+    id: z.ZodString;
+    hotelId: z.ZodNullable<z.ZodString>;
+    roomId: z.ZodNullable<z.ZodString>;
+    restaurantId: z.ZodNullable<z.ZodString>;
+    userId: z.ZodNullable<z.ZodString>;
+    organizationId: z.ZodNullable<z.ZodString>;
+    rating: z.ZodString;
+    reviewTitle: z.ZodNullable<z.ZodString>;
+    reviewPositiveText: z.ZodNullable<z.ZodString>;
+    reviewNegativeText: z.ZodNullable<z.ZodString>;
+    reviewDate: z.ZodNullable<z.ZodString>;
+    propertyResponse: z.ZodNullable<z.ZodString>;
+    stayDate: z.ZodNullable<z.ZodCoercedDate<unknown>>;
+    response: z.ZodNullable<z.ZodString>;
+    createdAt: z.ZodNullable<z.ZodDate>;
+    updatedAt: z.ZodNullable<z.ZodCoercedString<unknown>>;
+}, z.core.$strip>;
+export declare const reviewNratingInsertSchema: z.ZodObject<{
+    hotelId: z.ZodNullable<z.ZodString>;
+    restaurantId: z.ZodNullable<z.ZodString>;
+    roomId: z.ZodNullable<z.ZodString>;
+    rating: z.ZodString;
+    reviewTitle: z.ZodNullable<z.ZodString>;
+    reviewPositiveText: z.ZodNullable<z.ZodString>;
+    reviewNegativeText: z.ZodNullable<z.ZodString>;
+    reviewDate: z.ZodNullable<z.ZodString>;
+    propertyResponse: z.ZodNullable<z.ZodString>;
+    stayDate: z.ZodNullable<z.ZodCoercedDate<unknown>>;
+    response: z.ZodNullable<z.ZodString>;
+}, z.core.$strip>;
+export declare const reviewNratingUpdateSchema: z.ZodObject<{
+    hotelId: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    restaurantId: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    roomId: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    rating: z.ZodOptional<z.ZodString>;
+    reviewTitle: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    reviewPositiveText: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    reviewNegativeText: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    reviewDate: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    propertyResponse: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    stayDate: z.ZodOptional<z.ZodNullable<z.ZodCoercedDate<unknown>>>;
+    response: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+}, z.core.$strip>;
+export type reviewNratingUpdateType = z.infer<typeof reviewNratingUpdateSchema>;
+export type reviewNrating = z.infer<typeof reviewNrating>;
+export type reviewNratingInsertType = z.infer<typeof reviewNratingInsertSchema>;

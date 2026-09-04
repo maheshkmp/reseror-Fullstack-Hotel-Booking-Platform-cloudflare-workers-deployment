@@ -1,0 +1,242 @@
+import { z } from "zod";
+export declare const roomRatePlanSchema: z.ZodObject<{
+    id: z.ZodString;
+    roomTypeId: z.ZodString;
+    name: z.ZodString;
+    description: z.ZodNullable<z.ZodString>;
+    ratePlanType: z.ZodEnum<{
+        standard: "standard";
+        advance_purchase: "advance_purchase";
+        non_refundable: "non_refundable";
+        last_minute: "last_minute";
+        package: "package";
+    }>;
+    baseRate: z.ZodString;
+    currency: z.ZodString;
+    minAdvanceBooking: z.ZodNullable<z.ZodString>;
+    maxAdvanceBooking: z.ZodNullable<z.ZodString>;
+    minStayLength: z.ZodNullable<z.ZodString>;
+    maxStayLength: z.ZodNullable<z.ZodString>;
+    isRefundable: z.ZodNullable<z.ZodBoolean>;
+    cancellationDeadline: z.ZodNullable<z.ZodString>;
+    validFrom: z.ZodString;
+    validTo: z.ZodString;
+    isActive: z.ZodBoolean;
+    createdAt: z.ZodCoercedString<unknown>;
+    updatedAt: z.ZodNullable<z.ZodCoercedString<unknown>>;
+}, z.core.$strip>;
+export type RoomRatePlan = z.infer<typeof roomRatePlanSchema>;
+export declare const roomRatePlanInsertSchema: z.ZodObject<{
+    name: z.ZodString;
+    description: z.ZodNullable<z.ZodString>;
+    roomTypeId: z.ZodString;
+    isActive: z.ZodBoolean;
+    ratePlanType: z.ZodEnum<{
+        standard: "standard";
+        advance_purchase: "advance_purchase";
+        non_refundable: "non_refundable";
+        last_minute: "last_minute";
+        package: "package";
+    }>;
+    baseRate: z.ZodString;
+    currency: z.ZodString;
+    minAdvanceBooking: z.ZodNullable<z.ZodString>;
+    maxAdvanceBooking: z.ZodNullable<z.ZodString>;
+    minStayLength: z.ZodNullable<z.ZodString>;
+    maxStayLength: z.ZodNullable<z.ZodString>;
+    isRefundable: z.ZodNullable<z.ZodBoolean>;
+    cancellationDeadline: z.ZodNullable<z.ZodString>;
+    validFrom: z.ZodString;
+    validTo: z.ZodString;
+}, z.core.$strip>;
+export type RoomRatePlanInsert = z.infer<typeof roomRatePlanInsertSchema>;
+export declare const roomRatePlanUpdateSchema: z.ZodObject<{
+    name: z.ZodOptional<z.ZodString>;
+    description: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    isActive: z.ZodOptional<z.ZodBoolean>;
+    ratePlanType: z.ZodOptional<z.ZodEnum<{
+        standard: "standard";
+        advance_purchase: "advance_purchase";
+        non_refundable: "non_refundable";
+        last_minute: "last_minute";
+        package: "package";
+    }>>;
+    baseRate: z.ZodOptional<z.ZodString>;
+    currency: z.ZodOptional<z.ZodString>;
+    minAdvanceBooking: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    maxAdvanceBooking: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    minStayLength: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    maxStayLength: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    isRefundable: z.ZodOptional<z.ZodNullable<z.ZodBoolean>>;
+    cancellationDeadline: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    validFrom: z.ZodOptional<z.ZodString>;
+    validTo: z.ZodOptional<z.ZodString>;
+}, z.core.$strip>;
+export type RoomRatePlanUpdate = z.infer<typeof roomRatePlanUpdateSchema>;
+export declare const roomRateSchema: z.ZodObject<{
+    id: z.ZodString;
+    ratePlanId: z.ZodString;
+    rateDate: z.ZodString;
+    rate: z.ZodString;
+    availableRooms: z.ZodNullable<z.ZodString>;
+    isClosed: z.ZodNullable<z.ZodBoolean>;
+    createdAt: z.ZodCoercedString<unknown>;
+    updatedAt: z.ZodNullable<z.ZodCoercedString<unknown>>;
+}, z.core.$strip>;
+export type RoomRate = z.infer<typeof roomRateSchema>;
+export declare const roomRateInsertSchema: z.ZodObject<{
+    ratePlanId: z.ZodString;
+    rateDate: z.ZodString;
+    rate: z.ZodString;
+    availableRooms: z.ZodNullable<z.ZodString>;
+    isClosed: z.ZodNullable<z.ZodBoolean>;
+}, z.core.$strip>;
+export type RoomRateInsert = z.infer<typeof roomRateInsertSchema>;
+export declare const roomRateUpdateSchema: z.ZodObject<{
+    rateDate: z.ZodOptional<z.ZodString>;
+    rate: z.ZodOptional<z.ZodString>;
+    availableRooms: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    isClosed: z.ZodOptional<z.ZodNullable<z.ZodBoolean>>;
+}, z.core.$strip>;
+export type RoomRateUpdate = z.infer<typeof roomRateUpdateSchema>;
+export declare const roomSeasonalRateSchema: z.ZodObject<{
+    id: z.ZodString;
+    ratePlanId: z.ZodString;
+    name: z.ZodString;
+    startDate: z.ZodString;
+    endDate: z.ZodString;
+    mondayRate: z.ZodNullable<z.ZodString>;
+    tuesdayRate: z.ZodNullable<z.ZodString>;
+    wednesdayRate: z.ZodNullable<z.ZodString>;
+    thursdayRate: z.ZodNullable<z.ZodString>;
+    fridayRate: z.ZodNullable<z.ZodString>;
+    saturdayRate: z.ZodNullable<z.ZodString>;
+    sundayRate: z.ZodNullable<z.ZodString>;
+    flatRate: z.ZodNullable<z.ZodString>;
+    isActive: z.ZodBoolean;
+    createdAt: z.ZodCoercedString<unknown>;
+    updatedAt: z.ZodNullable<z.ZodCoercedString<unknown>>;
+}, z.core.$strip>;
+export type RoomSeasonalRate = z.infer<typeof roomSeasonalRateSchema>;
+export declare const roomSeasonalRateInsertSchema: z.ZodObject<{
+    name: z.ZodString;
+    isActive: z.ZodBoolean;
+    ratePlanId: z.ZodString;
+    startDate: z.ZodString;
+    endDate: z.ZodString;
+    mondayRate: z.ZodNullable<z.ZodString>;
+    tuesdayRate: z.ZodNullable<z.ZodString>;
+    wednesdayRate: z.ZodNullable<z.ZodString>;
+    thursdayRate: z.ZodNullable<z.ZodString>;
+    fridayRate: z.ZodNullable<z.ZodString>;
+    saturdayRate: z.ZodNullable<z.ZodString>;
+    sundayRate: z.ZodNullable<z.ZodString>;
+    flatRate: z.ZodNullable<z.ZodString>;
+}, z.core.$strip>;
+export type RoomSeasonalRateInsert = z.infer<typeof roomSeasonalRateInsertSchema>;
+export declare const roomSeasonalRateUpdateSchema: z.ZodObject<{
+    name: z.ZodOptional<z.ZodString>;
+    isActive: z.ZodOptional<z.ZodBoolean>;
+    startDate: z.ZodOptional<z.ZodString>;
+    endDate: z.ZodOptional<z.ZodString>;
+    mondayRate: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    tuesdayRate: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    wednesdayRate: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    thursdayRate: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    fridayRate: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    saturdayRate: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    sundayRate: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    flatRate: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+}, z.core.$strip>;
+export type RoomSeasonalRateUpdate = z.infer<typeof roomSeasonalRateUpdateSchema>;
+export declare const roomRatePlanWithRelationsSchema: z.ZodObject<{
+    id: z.ZodString;
+    roomTypeId: z.ZodString;
+    name: z.ZodString;
+    description: z.ZodNullable<z.ZodString>;
+    ratePlanType: z.ZodEnum<{
+        standard: "standard";
+        advance_purchase: "advance_purchase";
+        non_refundable: "non_refundable";
+        last_minute: "last_minute";
+        package: "package";
+    }>;
+    baseRate: z.ZodString;
+    currency: z.ZodString;
+    minAdvanceBooking: z.ZodNullable<z.ZodString>;
+    maxAdvanceBooking: z.ZodNullable<z.ZodString>;
+    minStayLength: z.ZodNullable<z.ZodString>;
+    maxStayLength: z.ZodNullable<z.ZodString>;
+    isRefundable: z.ZodNullable<z.ZodBoolean>;
+    cancellationDeadline: z.ZodNullable<z.ZodString>;
+    validFrom: z.ZodString;
+    validTo: z.ZodString;
+    isActive: z.ZodBoolean;
+    createdAt: z.ZodCoercedString<unknown>;
+    updatedAt: z.ZodNullable<z.ZodCoercedString<unknown>>;
+    rates: z.ZodOptional<z.ZodArray<z.ZodObject<{
+        id: z.ZodString;
+        ratePlanId: z.ZodString;
+        rateDate: z.ZodString;
+        rate: z.ZodString;
+        availableRooms: z.ZodNullable<z.ZodString>;
+        isClosed: z.ZodNullable<z.ZodBoolean>;
+        createdAt: z.ZodCoercedString<unknown>;
+        updatedAt: z.ZodNullable<z.ZodCoercedString<unknown>>;
+    }, z.core.$strip>>>;
+    seasonalRates: z.ZodOptional<z.ZodArray<z.ZodObject<{
+        id: z.ZodString;
+        ratePlanId: z.ZodString;
+        name: z.ZodString;
+        startDate: z.ZodString;
+        endDate: z.ZodString;
+        mondayRate: z.ZodNullable<z.ZodString>;
+        tuesdayRate: z.ZodNullable<z.ZodString>;
+        wednesdayRate: z.ZodNullable<z.ZodString>;
+        thursdayRate: z.ZodNullable<z.ZodString>;
+        fridayRate: z.ZodNullable<z.ZodString>;
+        saturdayRate: z.ZodNullable<z.ZodString>;
+        sundayRate: z.ZodNullable<z.ZodString>;
+        flatRate: z.ZodNullable<z.ZodString>;
+        isActive: z.ZodBoolean;
+        createdAt: z.ZodCoercedString<unknown>;
+        updatedAt: z.ZodNullable<z.ZodCoercedString<unknown>>;
+    }, z.core.$strip>>>;
+}, z.core.$strip>;
+export type RoomRatePlanWithRelations = z.infer<typeof roomRatePlanWithRelationsSchema>;
+export declare const roomRatePlanQueryParamsSchema: z.ZodObject<{
+    page: z.ZodOptional<z.ZodString>;
+    limit: z.ZodOptional<z.ZodString>;
+    sort: z.ZodDefault<z.ZodOptional<z.ZodEnum<{
+        asc: "asc";
+        desc: "desc";
+    }>>>;
+    search: z.ZodOptional<z.ZodString>;
+    roomTypeId: z.ZodOptional<z.ZodString>;
+    ratePlanType: z.ZodOptional<z.ZodEnum<{
+        standard: "standard";
+        advance_purchase: "advance_purchase";
+        non_refundable: "non_refundable";
+        last_minute: "last_minute";
+        package: "package";
+    }>>;
+    isActive: z.ZodOptional<z.ZodEnum<{
+        true: "true";
+        false: "false";
+    }>>;
+}, z.core.$strip>;
+export declare const roomRateQueryParamsSchema: z.ZodObject<{
+    page: z.ZodOptional<z.ZodString>;
+    limit: z.ZodOptional<z.ZodString>;
+    sort: z.ZodDefault<z.ZodOptional<z.ZodEnum<{
+        asc: "asc";
+        desc: "desc";
+    }>>>;
+    ratePlanId: z.ZodOptional<z.ZodString>;
+    dateFrom: z.ZodOptional<z.ZodString>;
+    dateTo: z.ZodOptional<z.ZodString>;
+    isClosed: z.ZodOptional<z.ZodEnum<{
+        true: "true";
+        false: "false";
+    }>>;
+}, z.core.$strip>;

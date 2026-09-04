@@ -1,0 +1,5 @@
+{
+  "bunVersion": "1.x",
+  "installCommand": "bun install && bun run --filter core build",
+  "buildCommand": "bun run build"
+}

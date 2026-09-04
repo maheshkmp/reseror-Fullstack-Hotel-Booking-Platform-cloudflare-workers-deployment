@@ -1,0 +1,61 @@
+import { z } from "zod";
+export declare const influencerSchema: z.ZodObject<{
+    id: z.ZodString;
+    userId: z.ZodNullable<z.ZodString>;
+    name: z.ZodString;
+    promoCode: z.ZodString;
+    commissionRate: z.ZodNullable<z.ZodString>;
+    discountRate: z.ZodNullable<z.ZodString>;
+    discountCap: z.ZodNullable<z.ZodString>;
+    minBookingValue: z.ZodNullable<z.ZodString>;
+    isActive: z.ZodBoolean;
+    expiresAt: z.ZodNullable<z.ZodString>;
+    usageLimit: z.ZodNullable<z.ZodNumber>;
+    usageCount: z.ZodNullable<z.ZodNumber>;
+    createdAt: z.ZodCoercedString<unknown>;
+    updatedAt: z.ZodNullable<z.ZodCoercedString<unknown>>;
+}, z.core.$strip>;
+export declare const influencerInsertSchema: z.ZodObject<{
+    name: z.ZodString;
+    expiresAt: z.ZodNullable<z.ZodString>;
+    userId: z.ZodNullable<z.ZodString>;
+    commissionRate: z.ZodNullable<z.ZodString>;
+    isActive: z.ZodBoolean;
+    promoCode: z.ZodString;
+    usageLimit: z.ZodNullable<z.ZodNumber>;
+    minBookingValue: z.ZodNullable<z.ZodString>;
+    discountRate: z.ZodNullable<z.ZodString>;
+    discountCap: z.ZodNullable<z.ZodString>;
+}, z.core.$strip>;
+export declare const influencerUpdateSchema: z.ZodObject<{
+    name: z.ZodOptional<z.ZodString>;
+    expiresAt: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    userId: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    commissionRate: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    isActive: z.ZodOptional<z.ZodBoolean>;
+    promoCode: z.ZodOptional<z.ZodString>;
+    usageLimit: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
+    minBookingValue: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    discountRate: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    discountCap: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+}, z.core.$strip>;
+export declare const affiliateUsageSchema: z.ZodObject<{
+    id: z.ZodString;
+    bookingId: z.ZodString;
+    influencerId: z.ZodString;
+    userId: z.ZodNullable<z.ZodString>;
+    commissionAmount: z.ZodString;
+    discountAmount: z.ZodString;
+    status: z.ZodEnum<{
+        pending: "pending";
+        paid: "paid";
+        cancelled: "cancelled";
+    }>;
+    payoutDate: z.ZodNullable<z.ZodString>;
+    createdAt: z.ZodCoercedString<unknown>;
+    updatedAt: z.ZodNullable<z.ZodCoercedString<unknown>>;
+}, z.core.$strip>;
+export type Influencer = z.infer<typeof influencerSchema>;
+export type InfluencerInsert = z.infer<typeof influencerInsertSchema>;
+export type InfluencerUpdate = z.infer<typeof influencerUpdateSchema>;
+export type AffiliateUsage = z.infer<typeof affiliateUsageSchema>;

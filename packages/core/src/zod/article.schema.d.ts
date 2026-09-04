@@ -1,0 +1,46 @@
+import { z } from "zod";
+export declare const article: z.ZodObject<{
+    id: z.ZodString;
+    organizationId: z.ZodNullable<z.ZodString>;
+    userId: z.ZodString;
+    title: z.ZodString;
+    slug: z.ZodNullable<z.ZodString>;
+    excerpt: z.ZodNullable<z.ZodString>;
+    content: z.ZodNullable<z.ZodString>;
+    featuredImage: z.ZodNullable<z.ZodString>;
+    isPublished: z.ZodDefault<z.ZodBoolean>;
+    readCount: z.ZodDefault<z.ZodNumber>;
+    metaTitle: z.ZodNullable<z.ZodString>;
+    metaDescription: z.ZodNullable<z.ZodString>;
+    keywords: z.ZodNullable<z.ZodString>;
+    createdAt: z.ZodCoercedString<unknown>;
+    updatedAt: z.ZodNullable<z.ZodCoercedString<unknown>>;
+}, z.core.$strip>;
+export declare const articleInsertSchema: z.ZodObject<{
+    slug: z.ZodNullable<z.ZodString>;
+    title: z.ZodString;
+    excerpt: z.ZodNullable<z.ZodString>;
+    content: z.ZodNullable<z.ZodString>;
+    featuredImage: z.ZodNullable<z.ZodString>;
+    isPublished: z.ZodDefault<z.ZodBoolean>;
+    readCount: z.ZodDefault<z.ZodNumber>;
+    metaTitle: z.ZodNullable<z.ZodString>;
+    metaDescription: z.ZodNullable<z.ZodString>;
+    keywords: z.ZodNullable<z.ZodString>;
+}, z.core.$strip>;
+export declare const articleUpdateSchema: z.ZodObject<{
+    slug: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    title: z.ZodOptional<z.ZodString>;
+    excerpt: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    content: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    featuredImage: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    isPublished: z.ZodOptional<z.ZodDefault<z.ZodBoolean>>;
+    readCount: z.ZodOptional<z.ZodDefault<z.ZodNumber>>;
+    metaTitle: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    metaDescription: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    keywords: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+}, z.core.$strip>;
+export type articleUpdateType = z.infer<typeof articleUpdateSchema>;
+export type article = z.infer<typeof article>;
+export type articleInsertType = z.infer<typeof articleInsertSchema>;
+export type NewsArticle = article;

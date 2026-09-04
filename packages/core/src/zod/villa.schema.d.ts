@@ -1,0 +1,144 @@
+import { z } from "zod";
+export { type HotelImage } from "./media.schema";
+export declare const villaSchema: z.ZodObject<{
+    id: z.ZodString;
+    organizationId: z.ZodString;
+    createdBy: z.ZodString;
+    hotelId: z.ZodString;
+    name: z.ZodString;
+    description: z.ZodNullable<z.ZodString>;
+    brandName: z.ZodNullable<z.ZodString>;
+    street: z.ZodString;
+    city: z.ZodString;
+    state: z.ZodString;
+    country: z.ZodString;
+    postalCode: z.ZodString;
+    latitude: z.ZodNullable<z.ZodString>;
+    longitude: z.ZodNullable<z.ZodString>;
+    phone: z.ZodNullable<z.ZodString>;
+    email: z.ZodNullable<z.ZodString>;
+    website: z.ZodNullable<z.ZodString>;
+    starRating: z.ZodNullable<z.ZodNumber>;
+    checkInTime: z.ZodNullable<z.ZodString>;
+    checkOutTime: z.ZodNullable<z.ZodString>;
+    status: z.ZodEnum<{
+        pending_approval: "pending_approval";
+        active: "active";
+        inactive: "inactive";
+        under_maintenance: "under_maintenance";
+    }>;
+    createdAt: z.ZodCoercedString<unknown>;
+    updatedAt: z.ZodNullable<z.ZodCoercedString<unknown>>;
+}, z.core.$strip>;
+export type Villa = z.infer<typeof villaSchema>;
+export declare const villaInsertSchema: z.ZodObject<{
+    name: z.ZodString;
+    email: z.ZodNullable<z.ZodString>;
+    status: z.ZodEnum<{
+        pending_approval: "pending_approval";
+        active: "active";
+        inactive: "inactive";
+        under_maintenance: "under_maintenance";
+    }>;
+    description: z.ZodNullable<z.ZodString>;
+    brandName: z.ZodNullable<z.ZodString>;
+    street: z.ZodString;
+    city: z.ZodString;
+    state: z.ZodString;
+    country: z.ZodString;
+    postalCode: z.ZodString;
+    latitude: z.ZodNullable<z.ZodString>;
+    longitude: z.ZodNullable<z.ZodString>;
+    phone: z.ZodNullable<z.ZodString>;
+    website: z.ZodNullable<z.ZodString>;
+    starRating: z.ZodNullable<z.ZodNumber>;
+    checkInTime: z.ZodNullable<z.ZodString>;
+    checkOutTime: z.ZodNullable<z.ZodString>;
+    hotelId: z.ZodString;
+}, z.core.$strip>;
+export type VillaInsert = z.infer<typeof villaInsertSchema>;
+export declare const villaUpdateSchema: z.ZodObject<{
+    name: z.ZodOptional<z.ZodString>;
+    email: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    status: z.ZodOptional<z.ZodEnum<{
+        pending_approval: "pending_approval";
+        active: "active";
+        inactive: "inactive";
+        under_maintenance: "under_maintenance";
+    }>>;
+    description: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    brandName: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    street: z.ZodOptional<z.ZodString>;
+    city: z.ZodOptional<z.ZodString>;
+    state: z.ZodOptional<z.ZodString>;
+    country: z.ZodOptional<z.ZodString>;
+    postalCode: z.ZodOptional<z.ZodString>;
+    latitude: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    longitude: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    phone: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    website: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    starRating: z.ZodOptional<z.ZodNullable<z.ZodNumber>>;
+    checkInTime: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    checkOutTime: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    hotelId: z.ZodOptional<z.ZodString>;
+}, z.core.$strip>;
+export type VillaUpdate = z.infer<typeof villaUpdateSchema>;
+export declare const villaWithRelationsSchema: z.ZodObject<{
+    id: z.ZodString;
+    organizationId: z.ZodString;
+    createdBy: z.ZodString;
+    hotelId: z.ZodString;
+    name: z.ZodString;
+    description: z.ZodNullable<z.ZodString>;
+    brandName: z.ZodNullable<z.ZodString>;
+    street: z.ZodString;
+    city: z.ZodString;
+    state: z.ZodString;
+    country: z.ZodString;
+    postalCode: z.ZodString;
+    latitude: z.ZodNullable<z.ZodString>;
+    longitude: z.ZodNullable<z.ZodString>;
+    phone: z.ZodNullable<z.ZodString>;
+    email: z.ZodNullable<z.ZodString>;
+    website: z.ZodNullable<z.ZodString>;
+    starRating: z.ZodNullable<z.ZodNumber>;
+    checkInTime: z.ZodNullable<z.ZodString>;
+    checkOutTime: z.ZodNullable<z.ZodString>;
+    status: z.ZodEnum<{
+        pending_approval: "pending_approval";
+        active: "active";
+        inactive: "inactive";
+        under_maintenance: "under_maintenance";
+    }>;
+    createdAt: z.ZodCoercedString<unknown>;
+    updatedAt: z.ZodNullable<z.ZodCoercedString<unknown>>;
+}, z.core.$strip>;
+export type VillaWithRelations = z.infer<typeof villaWithRelationsSchema>;
+export declare const villaTypeQueryParamsSchema: z.ZodObject<{
+    page: z.ZodOptional<z.ZodString>;
+    limit: z.ZodOptional<z.ZodString>;
+    sort: z.ZodDefault<z.ZodOptional<z.ZodEnum<{
+        asc: "asc";
+        desc: "desc";
+    }>>>;
+    search: z.ZodOptional<z.ZodString>;
+    hotelId: z.ZodOptional<z.ZodString>;
+}, z.core.$strip>;
+export declare const villaQueryParamsSchema: z.ZodObject<{
+    page: z.ZodOptional<z.ZodString>;
+    limit: z.ZodOptional<z.ZodString>;
+    sort: z.ZodDefault<z.ZodOptional<z.ZodEnum<{
+        asc: "asc";
+        desc: "desc";
+    }>>>;
+    search: z.ZodOptional<z.ZodString>;
+    hotelId: z.ZodOptional<z.ZodString>;
+    status: z.ZodOptional<z.ZodEnum<{
+        available: "available";
+        occupied: "occupied";
+        maintenance: "maintenance";
+        out_of_order: "out_of_order";
+        dirty: "dirty";
+    }>>;
+    floorNumber: z.ZodOptional<z.ZodString>;
+}, z.core.$strip>;

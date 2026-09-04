@@ -1,0 +1,18 @@
+# Database configuration
+# DB_TYPE: 'neon' for serverless (default) or 'postgres' for localhost/pgAdmin
+# DB_TYPE=postgres
+  DB_TYPE=neon
+  NEXT_PUBLIC_BETTER_AUTH_URL="http://localhost:4000"
+  BETTER_AUTH_URL="http://localhost:4000"
+
+
+# Neon connection string (serverless PostgreSQL)
+# Uncomment and use this DATABASE_URL when DB_TYPE=neon
+ DATABASE_URL="postgresql://neondb_owner:npg_lDf7Vjq4azIv@ep-silent-art-ai54uwk0-pooler.c-4.us-east-1.aws.neon.tech/neondb?sslmode=require"
+
+# Local PostgreSQL / pgAdmin connection string
+# Use this when DB_TYPE=postgres for development with pgAdmin
+# DATABASE_URL="postgresql://postgres:postgres@localhost:5432/bunplatedb"
+
+# Alternative Neon credentials (keep as backup)
+# NEON_DATABASE_URL="postgresql://neondb_owner:npg_lDf7Vjq4azIv@ep-silent-art-ai54uwk0-pooler.c-4.us-east-1.aws.neon.tech/neondb?sslmode=require"

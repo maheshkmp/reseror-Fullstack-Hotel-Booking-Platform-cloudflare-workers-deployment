@@ -1,0 +1,83 @@
+{
+  "name": "core",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "exports": {
+    "./auth/config": {
+      "bun": "./src/auth/config.ts",
+      "import": "./dist/auth/config.js",
+      "types": "./src/auth/config.ts",
+      "default": "./src/auth/config.ts"
+    },
+    "./auth/setup": {
+      "bun": "./src/auth/setup.ts",
+      "import": "./dist/auth/setup.js",
+      "types": "./src/auth/setup.ts",
+      "default": "./src/auth/setup.ts"
+    },
+    "./database": {
+      "bun": "./src/database/index.ts",
+      "import": "./dist/database/index.js",
+      "types": "./src/database/index.ts",
+      "default": "./src/database/index.ts"
+    },
+    "./database/schema": {
+      "bun": "./src/database/schema/index.ts",
+      "import": "./dist/database/schema/index.js",
+      "types": "./src/database/schema/index.ts",
+      "default": "./src/database/schema/index.ts"
+    },
+    "./rpc": {
+      "bun": "./src/rpc/index.ts",
+      "import": "./dist/rpc/index.js",
+      "types": "./src/rpc/index.ts",
+      "default": "./src/rpc/index.ts"
+    },
+    "./zod": {
+      "bun": "./src/zod/index.ts",
+      "import": "./dist/zod/index.js",
+      "types": "./src/zod/index.ts",
+      "default": "./src/zod/index.ts"
+    },
+    "./email/service": {
+      "bun": "./src/email/service.ts",
+      "import": "./dist/email/service.js",
+      "types": "./src/email/service.ts",
+      "default": "./src/email/service.ts"
+    },
+    "./types": {
+      "types": "./types/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "bun run build.ts",
+    "db:generate": "bunx drizzle-kit generate",
+    "db:push": "bunx drizzle-kit push",
+    "db:pull": "bunx drizzle-kit pull ",
+    "db:migrate": "bun src/database/migrate.ts",
+    "db:studio": "drizzle-kit studio",
+    "auth:generate": "bunx @better-auth/cli@latest generate --config ./src/auth/config.ts --output ./src/database/schema/auth.schema.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/nodemailer": "^8.0.0",
+    "@types/ws": "^8.18.1",
+    "api": "workspace:*",
+    "drizzle-kit": "^0.31.8"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^1.0.2",
+    "better-auth": "catalog:",
+    "drizzle-orm": "^0.45.0",
+    "drizzle-zod": "^0.8.3",
+    "hono": "catalog:",
+    "nodemailer": "^8.0.4",
+    "postgres": "^3.4.8",
+    "ws": "^8.18.3",
+    "zod": "^4.3.6"
+  }
+}
