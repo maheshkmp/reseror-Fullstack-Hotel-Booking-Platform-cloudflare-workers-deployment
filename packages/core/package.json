@@ -60,7 +60,7 @@
     "auth:generate": "bunx @better-auth/cli@latest generate --config ./src/auth/config.ts --output ./src/database/schema/auth.schema.ts"
   },
   "devDependencies": {
-    "@types/bun": "latest",
+    "@types/bun": "^1.2.0",
     "@types/nodemailer": "^8.0.0",
     "@types/ws": "^8.18.1",
     "drizzle-kit": "^0.31.8"

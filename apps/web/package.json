@@ -72,7 +72,7 @@
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
     "cookies-next": "^6.0.0",
-    "core": "workspace:*",
+    "core": "*",
     "date-fns": "^4.1.0",
     "detect-libc": "^2.1.2",
     "drizzle-zod": "^0.7.1",
