@@ -21,8 +21,10 @@
     "db:studio": "bun run --filter core db:studio"
   },
   "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.13.7",
     "@types/bun": "latest",
-    "core": "workspace:*"
+    "core": "workspace:*",
+    "wrangler": "^3.109.2"
   },
   "peerDependencies": {
     "typescript": "^5"
