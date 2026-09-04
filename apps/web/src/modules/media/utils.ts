@@ -1,6 +1,5 @@
 import { PutObjectCommand } from "@aws-sdk/client-s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
-import crypto from "crypto";
 
 import { s3Client, s3Config } from "@/modules/media/config";
 import { MediaType } from "@/modules/media/types";
@@ -9,7 +8,12 @@ import { MediaType } from "@/modules/media/types";
 export function generateUniqueFileName(originalName: string): string {
   const timestamp = Date.now();
 
-  const hash = crypto.randomBytes(8).toString("hex");
+  // Use Web Crypto API (Edge-compatible) instead of Node.js crypto
+  const bytes = new Uint8Array(8);
+  crypto.getRandomValues(bytes);
+  const hash = Array.from(bytes)
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join("");
   const name = originalName.split(".")[0];
   const extension = originalName.split(".").pop();
 
