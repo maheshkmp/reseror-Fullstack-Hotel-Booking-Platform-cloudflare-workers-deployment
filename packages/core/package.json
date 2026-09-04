@@ -63,7 +63,6 @@
     "@types/bun": "latest",
     "@types/nodemailer": "^8.0.0",
     "@types/ws": "^8.18.1",
-    "api": "workspace:*",
     "drizzle-kit": "^0.31.8"
   },
   "peerDependencies": {

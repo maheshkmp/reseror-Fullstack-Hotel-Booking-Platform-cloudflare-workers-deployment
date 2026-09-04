@@ -2,6 +2,7 @@
   "name": "bunplate",
   "type": "module",
   "private": true,
+  "packageManager": "bun@1.2.0",
   "workspaces": {
     "packages": [
       "packages/*",
