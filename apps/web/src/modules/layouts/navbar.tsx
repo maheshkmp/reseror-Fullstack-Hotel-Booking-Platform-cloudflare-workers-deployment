@@ -37,6 +37,8 @@ import {
   Home
 } from "lucide-react";
 
+import { PortfolioBanner } from "@/components/portfolio-banner";
+
 type Props = {};
 
 export function Navbar({}: Props) {
@@ -108,10 +110,11 @@ export function Navbar({}: Props) {
 
   return (
     <>
+      <PortfolioBanner />
       {/* Fixed Navbar */}
       <div
         className={cn(
-          "fixed top-0 left-0 w-full z-50 h-16 flex items-center justify-between px-4 lg:px-6 transition-all duration-300",
+          "fixed top-8 left-0 w-full z-50 h-16 flex items-center justify-between px-4 lg:px-6 transition-all duration-300",
           isSolid
             ? "bg-white shadow-sm border-b border-gray-200/70"
             : "bg-transparent"
@@ -350,7 +353,7 @@ export function Navbar({}: Props) {
       </div>
 
       {/* Spacer — only on non-home pages since hero covers full viewport */}
-      {!isHomePage && <div className="h-16" />}
+      {!isHomePage && <div className="h-24" />}
     </>
   );
 }
