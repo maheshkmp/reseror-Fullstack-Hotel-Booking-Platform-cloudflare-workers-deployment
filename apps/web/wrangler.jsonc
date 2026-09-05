@@ -2,8 +2,8 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "reseror-cloudflare",
   "main": ".open-next/worker.js",
-  "compatibility_date": "2026-09-01",
-  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_date": "2024-09-23",
+  "compatibility_flags": ["nodejs_compat", "global_navigator"],
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
