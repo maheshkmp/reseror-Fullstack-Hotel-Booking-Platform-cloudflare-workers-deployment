@@ -15,7 +15,8 @@ export const getClient = async (cookieHeader?: string | null, userAgent?: string
 
   const backendUrl =
     process.env.BACKEND_INTERNAL_URL ||
-    process.env.NEXT_PUBLIC_BACKEND_URL!;
+    process.env.NEXT_PUBLIC_BACKEND_URL ||
+    "http://localhost:4000";
 
   return rpc(backendUrl, {
     headers: {
